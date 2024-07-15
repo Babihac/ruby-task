@@ -2,5 +2,7 @@
 
 FactoryBot.define do
   factory :task do
+    title { 'Test task' }
+    description { 'Simple task for testing' }
   end
 end
