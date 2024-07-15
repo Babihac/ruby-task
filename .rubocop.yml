@@ -1,0 +1,69 @@
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - "utils/*.rb"
+Layout/LineLength:
+  Enabled: false
+Style:
+  Enabled: true
+Style/NumericPredicate:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FormatStringToken:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Layout:
+  Enabled: true
+Metrics:
+  Enabled: false
+Naming:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+Rails/ActiveRecordOverride:
+  Exclude:
+    - app/models/central_unit.rb
+Rails/SkipsModelValidations:
+  Exclude:
+    - app/models/central_unit.rb
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - app/models/installation.rb
+    - app/models/delivery.rb
+Rails/InverseOf:
+  Enabled: false
+Rails/HelperInstanceVariable:
+  Enabled: false
+require:
+  - rubocop-rails
+  - rubocop-rspec
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+    - ci
+RSpec/ExampleLength:
+  Max: 20
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Max: 25
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 5
+RSpec/MultipleExpectations:
+  Max: 5
+RSpec/PendingWithoutReason:
+  Enabled: false
+Style/OneLineConditional:
+  Enabled: false
