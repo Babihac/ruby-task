@@ -37,4 +37,22 @@ RSpec.describe Task, type: :model do
       end
     end
   end
+
+  describe 'create with tags' do
+    let(:task) { create(:task) }
+    let(:tag) { create(:tag, title: 'first tag') }
+    let(:second_tag) { create(:tag, title: 'second tag') }
+
+    it 'can add tags to task' do
+      task.tags << tag
+      task.tags << second_tag
+
+      expect(task.tags.size).to eq(2)
+    end
+
+    it 'cleans up taggings when the task is deleted' do
+      task.tags << tag
+      expect { task.destroy }.to change(Tagging, :count).by(-1)
+    end
+  end
 end

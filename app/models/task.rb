@@ -3,7 +3,9 @@
 class Task < ApplicationRecord
   has_one_attached :attachment
 
-  belongs_to :project
+  belongs_to :project, optional: true
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   validates :title, presence: true
   validate :attachment_size
