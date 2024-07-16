@@ -1,0 +1,6 @@
+en:
+  users:
+    sessions:
+      new:
+       title: Login
+       login: Log in

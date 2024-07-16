@@ -1,0 +1,6 @@
+cs:
+  devise:
+    failure:
+      user:
+        not_found_in_database: "Nenalezeno uživatelské jméno nebo heslo."
+        invalid: "Nesprávné uživatelské jméno nebo heslo."

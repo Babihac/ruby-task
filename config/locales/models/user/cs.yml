@@ -24,3 +24,4 @@ cs:
         email: "Email"
         password: "Heslo"
         password_confirmation: "Potvrzení hesla"
+        remember_me: "Pamatovat si mě"

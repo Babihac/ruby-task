@@ -1,0 +1,6 @@
+cs:
+  users:
+    sessions:
+      new:
+       title: Přihlášení
+       login: Přihlásit
