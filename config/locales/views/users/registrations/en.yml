@@ -1,0 +1,6 @@
+en:
+  users:
+    registrations:
+      new:
+        title: Sign up 
+        sign_up: Sign up

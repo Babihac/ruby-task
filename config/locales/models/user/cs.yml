@@ -1,0 +1,26 @@
+cs:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "nesmí být prázdné"
+            last_name:
+              blank: "nesmí být prázdné"
+            email:
+              blank: "nesmí být prázdný"
+              taken: "již je obsazen"
+            password:
+              blank: "nesmí být prázdné"
+              too_short: "musí mít alespoň %{count} znaků"
+            password_confirmation:
+              blank: "nesmí být prázdné"
+              confirmation: "nesouhlasí s ověřením"
+    attributes:
+      user:
+        first_name: "Jméno"
+        last_name: "Příjmení"
+        email: "Email"
+        password: "Heslo"
+        password_confirmation: "Potvrzení hesla"

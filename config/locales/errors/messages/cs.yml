@@ -1,0 +1,4 @@
+cs:
+  errors:
+    messages:
+      not_saved: "Něco se nepodařilo uložit"

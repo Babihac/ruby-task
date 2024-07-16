@@ -1,0 +1,4 @@
+en:
+  errors:
+    messages:
+      not_saved: "Something went wrong and the record was not saved"

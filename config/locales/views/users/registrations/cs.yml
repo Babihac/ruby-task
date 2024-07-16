@@ -1,0 +1,6 @@
+cs:
+  users:
+    registrations:
+      new:
+        title: Registrace
+        sign_up: Registrovat
