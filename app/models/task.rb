@@ -3,6 +3,8 @@
 class Task < ApplicationRecord
   has_one_attached :attachment
 
+  belongs_to :project
+
   validates :title, presence: true
   validate :attachment_size
 
