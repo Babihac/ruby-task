@@ -1,0 +1,12 @@
+cs:
+  activerecord:
+    errors:
+      models:
+        tag:
+          attributes:
+            title:
+              blank: "nesmí být prázdný"
+              taken: "Projekt s tímto názvem již existuje"
+    attributes:
+      project:
+        title: "Název"

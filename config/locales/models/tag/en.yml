@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    errors:
+      models:
+        tag:
+          attributes:
+            title:
+              blank: "must not be blank"
+              taken: "Tag with this title already exists"
+    attributes:
+      project:
+        title: "Title"
