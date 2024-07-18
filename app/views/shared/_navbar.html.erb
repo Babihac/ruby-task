@@ -6,9 +6,10 @@
   <% if user_signed_in? %>
     <div class="navbar-start lg:flex-1">
       <ul class="menu menu-horizontal px-1">
-        <li><%= link_to 'Projekty', projects_path %></li>
-        <li><%= link_to 'Tagy', tags_path %></li>
-        <li><a>Tasky</a></li>
+        <li><%= link_to t('.projects'), projects_path %></li>
+        <li><%= link_to t('.tags'), tags_path %></li>
+        <li><%= link_to t('.tasks'), tasks_path %></li>
+        <li> <%= link_to t('.new_task'), new_task_path, class: "btn btn-primary btn-sm" %> </li>
       </ul>
     </div>
     <div class="dropdown dropdown-end">

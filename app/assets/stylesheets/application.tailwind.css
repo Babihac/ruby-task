@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input:focus, .input:focus-within {
+  outline: none; /* Removes the outline */
+  border-color: none; /* Resets to default border color */
+  box-shadow: none; /* Resets to default box shadow */
+}
+
+.input input:focus {
+  outline: none; /* Removes the outline */
+}
+
+
+.tags .input {
+  outline: none;
+}
+
+.tags .input:focus {
+  outline: none;
+}
+
+.check_boxes .checkbox {
+  outline: none;
+  border-color: none;
+  border : none;
+  width: max-content;
+  height: max-content;
+}
+
+.tags .check_boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tags .check_boxes > *:first-child {
+  flex-basis: 100%;
+}

@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            title:
+              blank: "can't be blank"
+              taken: "Project with this name already exists"
+    attributes:
+      task:
+        title: "Title"
+        description: "Description"
+        project: "Project"
+        attachment: "Attachment"
+        tags: "Tags"

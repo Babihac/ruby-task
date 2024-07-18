@@ -1,0 +1,56 @@
+en:
+  tasks:
+    unauthorized: "You are not authorized to perform this action."
+    not_found: "Task was not found."
+    toggle_complete:
+      success: "Task status was successfully changed."
+    status:
+      done: "Done"
+      pending: "Pending"
+    index:
+      title: "Your tasks"
+      new: "New task"
+      name: "Name"
+      confirm_destroy: "Are you sure you want to delete this task?"
+      destroy: "Delete"
+      edit: "Edit"
+      detail: "Detail"
+      description: "Description"
+      tags: "Tags"
+      is_done: "Status"
+    new:
+      title: "New task"
+      create: "Create task"
+      back: "Back to tasks"
+      select_project: "Select project"
+    create:
+      success: "Task was successfully created."
+      failure: "Task was not created."
+    destroy:
+      success: "Task was successfully deleted."
+      failure: "Task was not deleted."
+      unauthorized: "You are not authorized to delete tasks."
+    edit:
+      title: "Edit task"
+      update: "Save task"
+      back: "Back to tasks"
+      submit: "Save"
+      is_done: "Done"
+    update:
+      success: "Task was successfully saved."
+      failure: "Task was not saved."
+    show:
+      title: "Task detail"
+      back: "Back to tasks"
+      project: "Project"
+      attachment: "Attachment"
+      tags: "Tags"
+      download: "Download"
+      created_at: "Created at"
+      edit: "Edit"
+      back: "Back to tasks"
+      destroy: "Delete"
+      new: "New task"
+      no_project: "Unassigned"
+      confirm_destroy: "Are you sure you want to delete this task?"
+    not_found: "Task was not found."

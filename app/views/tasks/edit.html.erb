@@ -1,0 +1,30 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-md px-6 py-8 bg-white shadow-md overflow-hidden rounded-lg">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-4 text-center"> <%= t('.title') %> </h2>
+
+    <%= simple_form_for(@task, url: task_path(id: @task.id), html: { class: "space-y-4" }) do |f| %>
+      <%= f.error_notification %>
+
+      <div>
+        <%= f.input :title, input_html: { class: "input bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" }, wrapper: false, label_html: { class: "block mb-2 text-sm font-medium text-gray-900" } %>
+        <%= f.input :description, input_html: { class: "input bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" }, wrapper: false, label_html: { class: "block mb-2 text-sm font-medium text-gray-900 mt-3" } %>
+
+        <%= f.association :project, include_blank: t('.select_project'), input_html: { class: "select bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5" }, wrapper: false, label: false%>
+        <%= f.input :is_done, as: :boolean, input_html: { class: "mt-4" }, wrapper: false, label: t('.is_done') %>
+
+      <div class="overflow-scroll max-w-md mt-4 tags h-48">
+        <%= f.association :tags, as: :check_boxes, input_html: { class: "color-red-500"}, item_wrapper_class: "flex items-center space-x-2 checkbox", item_label_class: "text-sm text-gray-900 flex gap-2 mt-2" %>
+      </div>
+
+        <%= f.input :attachment, as: :file, input_html: { class: "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-transparent" }, wrapper: false, label_html: { class: "block mb-2 text-sm font-medium text-gray-900 mt-4" } %>
+      </div>
+
+      <div class="flex justify-between">
+        <div class="w-min">
+          <%= link_to t('.back'), tasks_path, class: "btn btn-link btn-sm" %>
+        </div>
+        <%= f.button :submit, value: t('.submit'), class: "px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" %>
+      </div>
+    <% end %>
+  </div>
+</div>

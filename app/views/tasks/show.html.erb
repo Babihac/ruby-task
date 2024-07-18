@@ -1,0 +1,41 @@
+<div class="card bg-base-100 w-max min-w-96 shadow-xl mx-auto my-6">
+  <div class="card-body">
+    <h1 class="card-title">
+      <%= @task.title %>
+      <span class="badge badge-neutral">
+        <%= @task.status %>
+      </span>
+      <span class="text-sm text-gray-500">
+        <%= t('.created_at') %> <%= l(@task.created_at, format: :short) %> 
+      </span>
+      <span>
+        <%= link_to t('.destroy'), task_path(@task), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.confirm_destroy') }, class: "btn btn-xs btn-error" %>
+        <%= link_to @task.is_done ? t('.mark_as_pending') : t('.mark_as_done'), toggle_done_task_path(id: @task.id), method: :patch, class: "btn btn-xs btn-primary", data: { turbo_method: :patch } %>
+      </span>
+    </h1>
+    <p class="text-sm text-gray-500"> <%= @task.description %></p>
+    <p><strong> <%= t('.project') %> </strong> <%= @task.project.present? ? @task.project.title : t('.no_project') %></p>
+    <p>
+      <strong> <%= t('.tags') %> </strong>
+      <% @task.tags.each do |tag| %>
+        <span class="badge"><%= tag.title %></span>
+      <% end %>
+    </p>
+
+    <% if @task.attachment.attached? %>
+      <p>
+        <strong> <%= t('.attachment') %>: </strong> 
+        <span class="text-sm text-gray-500">
+          <%= @task.attachment.filename.to_s %> 
+          (<%= number_to_human_size @task.attachment.byte_size %>)
+        </span>
+        <%= link_to t('.download'), rails_blob_path(@task.attachment, disposition: "attachment"), class: "btn btn-link" %>
+      </p>
+    <% end %>
+
+    <div class="card-actions justify-end">
+      <%= link_to t('.back'), tasks_path, class: "btn btn-neutral" %>
+      <%= link_to t('.edit'), edit_task_path(id: @task.id), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

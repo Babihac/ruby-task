@@ -5,3 +5,7 @@ en:
       login: Log in
       profile: Profile
       logout: Log out
+      new_task: New task
+      projects: Projects
+      tags: Tags
+      tasks: Tasks

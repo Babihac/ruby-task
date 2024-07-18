@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'pagy', '~> 8.6', '>= 8.6.3'
+gem 'simple_form', '~> 5.3', '>= 5.3.1'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -56,6 +57,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   gem 'rspec', '~> 3.13'
   gem 'rspec-rails', '~> 6.1', '>= 6.1.3'
+  gem 'faker', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do

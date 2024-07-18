@@ -9,3 +9,6 @@ cs:
       signed_in: "Přihlášení proběhlo úspěšně."
       signed_out: "Odhlášení proběhlo úspěšně."
       signed_up: "Vítejte! Úspěšně jste se zaregistrovali."
+    registrations:
+      user:
+        signed_up: "Vítejte! Úspěšně jste se zaregistrovali."

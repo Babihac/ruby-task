@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   before_action :load_project, only: %i[destroy]
 
   def index
-    @pagy, @projects = pagy(Project.where(user_id: current_user.id).order(position: :asc), items: 10)
+    @pagy, @projects = pagy(Project.where(user_id: current_user.id).order(position: :asc), items: 8)
   end
 
   def new
@@ -23,7 +23,9 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    position = @project.position
     @project.destroy
+    ProjectService.unshift_projects(position)
     redirect_to projects_path, notice: I18n.t('projects.destroy.success')
   end
 

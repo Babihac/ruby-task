@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
     resources :projects, only: %i[index create new destroy]
     resources :tags, only: %i[index create new destroy]
-    # Defines the root path route ("/")
-    # root "posts#index"
+    resources :tasks do
+      member do
+        patch :toggle_done
+      end
+    end
   end
 end

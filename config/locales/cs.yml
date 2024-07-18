@@ -1,0 +1,6 @@
+cs:
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"
+      short: "%d.%m.%Y"
+      long: "%d.%m.%Y %H:%M:%S"

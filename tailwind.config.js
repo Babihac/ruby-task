@@ -5,6 +5,7 @@ module.exports = {
     "./app/assets/stylesheets/**/*.css",
     "./app/javascript/**/*.js",
     "./config/initializers/form_errors.rb",
+    "./config/initializers/simple_form.rb",
   ],
   plugins: [require("daisyui")],
 };
