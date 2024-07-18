@@ -6,7 +6,8 @@ class TagsController < ApplicationController
   before_action :load_tag, only: %i[destroy]
 
   def index
-    @pagy, @tags = pagy(Tag.where(user_id: current_user.id).order(title: :asc), items: 8)
+    filtered_tags = Tag.filter_by_title(params[:title]).by_user(current_user.id)
+    @pagy, @tags = pagy(filtered_tags, items: 8)
   end
 
   def new

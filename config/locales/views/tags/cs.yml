@@ -1,21 +1,23 @@
 cs:
   tags:
-    not_found: "Tag nebyl nalezen."
+    not_found: Tag nebyl nalezen.
     new:
-      title: "Nový tag"
-      create: "Vytvořit tag"
-      back: "Zpět na tagy"
+      title: Nový tag
+      create: Vytvořit tag
+      back: Zpět na tagy
     create:
-      success: "Tag byl úspěšně vytvořen."
-      failure: "Tag nebyl vytvořen."
+      success: Tag byl úspěšně vytvořen.
+      failure: Tag nebyl vytvořen.
     destroy:
-      success: "Tag byl úspěšně smazán."
-      failure: "Tag nebyl smazán."
-      unauthorized: "Nemáte oprávnění k mazání tagů."
+      success: Tag byl úspěšně smazán.
+      failure: Tag nebyl smazán.
+      unauthorized: Nemáte oprávnění k mazání tagů.
     index:
-      title: "Tagy"
-      new: "Nový tag"
-      name: "Název"
-      confirm_destroy: "Opravdu chcete smazat tento tag?"
-      destroy: "Smazat"
+      title: Tagy
+      new: Nový tag
+      name: Název
+      confirm_destroy: Opravdu chcete smazat tento tag?
+      destroy: Smazat
+      filter_by_title: Filtrovat podle názvu
+      filter: Filtrovat
 

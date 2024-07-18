@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
   before_action :load_project, only: %i[destroy]
 
   def index
-    @pagy, @projects = pagy(Project.where(user_id: current_user.id).order(position: :asc), items: 8)
+    filtered_projects = Project.filter_by_title(params[:title]).by_user(current_user.id)
+    @pagy, @projects = pagy(filtered_projects, items: 8)
   end
 
   def new

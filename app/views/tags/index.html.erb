@@ -3,44 +3,50 @@
     <h1 class="text-center text-2xl"> <%= t('.title') %> </h1>
     <%= link_to t('.new'), new_tag_path, class: "btn btn-primary btn-sm ml-5" %>
   </div>
-  <div class="overflow-x-auto mt-5">
-    <table class="table table-zebra">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th></th>
-          <th> <%= t('.name')%> </th>
-          <th><%= t('.actions')%></th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- body -->
-        <% @tags.each do |tag| %>
+  <%= form_tag(tags_path, method: "get", class: "flex gap-4 items-end mt-5", data: { turbo_frame: "tags_table" }) do %>
+    <%= text_field_tag :title, params[:title], placeholder: t('.filter_by_title'), class: "border border-gray-300 rounded-md p-2" %>
+    <%= submit_tag t('.filter'), class: "btn btn-primary" %>
+  <% end %>
+  <%= turbo_frame_tag "tags_table" do %>
+    <div class="overflow-x-auto mt-5">
+      <table class="table table-zebra">
+        <!-- head -->
+        <thead>
           <tr>
-            <td><%= tag.id %></td>
-            <td><%= tag.title %></td>
-            <td>
-              <%= link_to t('.destroy'), tag_path(id: tag.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.confirm_destroy') }, class: "btn btn-link btn-sm" %>
-            </td>
+            <th></th>
+            <th> <%= t('.name')%> </th>
+            <th><%= t('.actions')%></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          <!-- body -->
+          <% @tags.each do |tag| %>
+            <tr>
+              <td><%= tag.id %></td>
+              <td><%= highlight(tag.title, params[:title]) %></td>
+              <td>
+                <%= link_to t('.destroy'), tag_path(id: tag.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.confirm_destroy') }, class: "btn btn-link btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-  <div class="flex justify-center my-4">
-    <div class="join mt-3">
-        <% if @pagy.prev %>
-          <%= link_to '<<', pagy_url_for(@pagy, @pagy.prev), class: "join-item btn" %>
-        <% end %>
+    <div class="flex justify-center my-4">
+      <div class="join mt-3">
+          <% if @pagy.prev %>
+            <%= link_to '<<', pagy_url_for(@pagy, @pagy.prev), class: "join-item btn" %>
+          <% end %>
 
 
 
-        <button class="join-item btn">Strana <%= @pagy.page %></button>
+          <button class="join-item btn">Strana <%= @pagy.page %></button>
 
-        <% if @pagy.next %>
-          <%= link_to '>>', pagy_url_for(@pagy, @pagy.next), class: "join-item btn" %>
-        <% end %>
+          <% if @pagy.next %>
+            <%= link_to '>>', pagy_url_for(@pagy, @pagy.next), class: "join-item btn" %>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

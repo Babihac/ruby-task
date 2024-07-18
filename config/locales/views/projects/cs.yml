@@ -8,6 +8,8 @@ cs:
       new: Nový projekt
       confirm_destroy: Opravdu chcete smazat tento projekt?
       destroy: Smazat
+      filter_by_title: Filtrovat podle názvu
+      filter: Filtrovat
     new:
       title: Nový projekt
       name: Název

@@ -1,62 +1,69 @@
 cs:
   tasks:
-    unauthorized: "Nemáte oprávnění k této akci."
-    not_found: "Úkol nebyl nalezen."
+    unauthorized: Nemáte oprávnění k této akci.
+    not_found: Úkol nebyl nalezen.
     toggle_complete:
-      success: "Stav úkolu byl úspěšně změněn."
+      success: Stav úkolu byl úspěšně změněn.
     status:
-      done: "Ukončeno"
-      pending: "Nedokončeno"
+      done: Ukončeno
+      pending: Nedokončeno
     index:
-      actions: "Akce"
-      title: "Vaše úkoly"
-      new: "Nový úkol"
-      name: "Název"
-      confirm_destroy: "Opravdu chcete smazat tento úkol?"
-      destroy: "Smazat"
-      edit: "Upravit"
-      detail: "Detail"
-      description: "Popis"
-      tags: "Štítky"
-      is_done: "Status"
-      mark_as_done: "Dončit"
-      mark_as_pending: "Rozpracovat"
+      actions: Akce
+      title: Vaše úkoly
+      new: Nový úkol
+      name: Název
+      confirm_destroy: Opravdu chcete smazat tento úkol?
+      destroy: Smazat
+      edit: Upravit
+      detail: Detail
+      description: Popis
+      tags: Štítky
+      is_done: Status
+      mark_as_done: Dončit
+      mark_as_pending: Rozpracovat
+      filter_by_title: Filtrovat podle názvu
+      status: Status
+      project: Projekt
+      all: Vše
+      done: Ukončeno
+      pending: Nedokončeno
+      filter: Filtrovat
     new:
-      title: "Nový úkol"
-      create: "Vytvořit úkol"
-      back: "Zpět na úkoly"
-      select_project: "Vyberte projekt"
+      title: Nový úkol
+      create: Vytvořit úkol
+      back: Zpět na úkoly
+      select_project: Vyberte projekt
     create:
-      success: "Úkol byl úspěšně vytvořen."
-      failure: "Úkol nebyl vytvořen."
+      success: Úkol byl úspěšně vytvořen.
+      failure: Úkol nebyl vytvořen.
     destroy:
-      success: "Úkol byl úspěšně smazán."
-      failure: "Úkol nebyl smazán."
-      unauthorized: "Nemáte oprávnění k mazání úkolů."
+      success: Úkol byl úspěšně smazán.
+      failure: Úkol nebyl smazán.
+      unauthorized: Nemáte oprávnění k mazání úkolů.
     edit:
-      title: "Upravit úkol"
-      update: "Uložit úkol"
-      back: "Zpět na úkoly"
-      submit: "Uložit"
-      is_done: "Dokončeno"
+      title: Upravit úkol
+      update: Uložit úkol
+      back: Zpět na úkoly
+      submit: Uložit
+      is_done: Dokončeno
     update:
-      success: "Úkol byl úspěšně uložen."
-      failure: "Úkol nebyl uložen."
+      success: Úkol byl úspěšně uložen.
+      failure: Úkol nebyl uložen.
     show:
-      title: "Detail úkolu"
-      back: "Zpět na úkoly"
-      project: "Projekt"
-      attachment: "Příloha"
-      tags: "Štítky"
-      created_at: "Vytvořeno"
-      download: "Stáhnout"
-      edit: "Upravit"
-      back: "Zpět na úkoly"
-      destroy: "Smazat"
-      new: "Nový úkol"
-      no_project: "Nepřiřazen"
-      mark_as_done: "Dončit"
-      mark_as_pending: "Rozpracovat"
-      confirm_destroy: "Opravdu chcete smazat tento úkol?"
-    not_found: "Úkol nebyl nalezen."
+      title: Detail úkolu
+      back: Zpět na úkoly
+      project: Projekt
+      attachment: Příloha
+      tags: Štítky
+      created_at: Vytvořeno
+      download: Stáhnout
+      edit: Upravit
+      back: Zpět na úkoly
+      destroy: Smazat
+      new: Nový úkol
+      no_project: Nepřiřazen
+      mark_as_done: Dončit
+      mark_as_pending: Rozpracovat
+      confirm_destroy: Opravdu chcete smazat tento úkol?
+    not_found: Úkol nebyl nalezen.
     

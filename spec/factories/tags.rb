@@ -3,5 +3,6 @@
 FactoryBot.define do
   factory :tag do
     title { 'test tag' }
+    user
   end
 end
