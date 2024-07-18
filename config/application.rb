@@ -17,6 +17,7 @@ module JuicimoTask
     config.autoload_lib(ignore: %w[assets tasks])
     config.i18n.default_locale = :cs
     config.i18n.available_locales = %i[cs en]
+    config.autoload_paths << Rails.root.join('app/services')
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

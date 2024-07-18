@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    errors:
+      models:
+        project:
+          attributes:
+            title:
+              blank: "can't be blank"
+              taken: "Project with this title already exists"
+            position:
+              blank: "can't be blank"
+              taken: "Project with this position already exists"
+    attributes:
+      project:
+        title: "Title"
+        position: "Position"

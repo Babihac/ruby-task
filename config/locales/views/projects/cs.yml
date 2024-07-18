@@ -1,0 +1,25 @@
+cs:
+  projects:
+    index: 
+      title: Vaše projekty
+      name: Název
+      position: Pozice
+      actions: Akce
+      new: Nový projekt
+      confirm_destroy: Opravdu chcete smazat tento projekt?
+      destroy: Smazat
+    new:
+      title: Nový projekt
+      name: Název
+      position: Pozice
+      create: Vytvořit
+      back: Zpět na projekty
+      insert_at_start: Vložit na začátek
+      insert_at_end: Vložit na konec
+    create:
+      success: Projekt byl úspěšně vytvořen.
+      error: Projekt nebyl vytvořen.
+    destroy:
+      success: Projekt byl úspěšně smazán.
+      error: Projekt nebyl smazán.
+      unauthorized: Nemáte oprávnění smazat tento projekt.

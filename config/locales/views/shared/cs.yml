@@ -1,0 +1,7 @@
+cs:
+  shared:
+    navbar:
+      sign_up: Registrace
+      login: Přihlášení
+      profile: Profil
+      logout: Odhlásit se

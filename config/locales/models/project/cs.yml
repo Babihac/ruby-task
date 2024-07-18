@@ -1,0 +1,16 @@
+cs:
+  activerecord:
+    errors:
+      models:
+        project:
+          attributes:
+            title:
+              blank: "nesmí být prázdný"
+              taken: "Projekt s tímto názvem již existuje"
+            position:
+              blank: "nesmí být prázdná"
+              taken: "Projekt s touto pozicí již existuje"
+    attributes:
+      project:
+        title: "Název"
+        position: "Pozice"

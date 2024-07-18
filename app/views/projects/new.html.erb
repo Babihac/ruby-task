@@ -1,0 +1,29 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-md px-6 py-8 bg-white shadow-md overflow-hidden rounded-lg">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-4 text-center"> <%= t('.title') %> </h2>
+
+    <%= form_with model: @project, local: true, class: " max-w-xs mx-auto" do |form| %>
+      <div class="mb-4">
+        <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.text_field :title, class:  "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <div class="mb-6">
+        <%= form.label :position, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :position, 
+          options_for_select([[t('.insert_at_start'), 1]] + [[t('.insert_at_end'), Project.count + 1]] + ((Project.count > 1) ? (2..Project.count).map { |index| [index, index] } : [])), 
+          {}, 
+          { class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" } %>
+      </div>
+
+      <div class="flex justify-between">
+        <div class="w-min">
+          <%= link_to t('.back'), projects_path, class: "btn btn-link btn-sm" %>
+        </div>
+        <div class="w-min">
+          <%= form.submit t('.create'), class: "btn btn-primary btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

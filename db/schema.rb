@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_16_203648) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_17_215111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,8 +47,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_203648) do
     t.integer "position", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["position"], name: "index_projects_on_position", unique: true
     t.index ["title"], name: "index_projects_on_title", unique: true
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -92,6 +94,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_203648) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "projects", "users"
   add_foreign_key "taggings", "tags"
   add_foreign_key "taggings", "tasks"
   add_foreign_key "tasks", "projects"

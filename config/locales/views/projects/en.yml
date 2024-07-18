@@ -1,0 +1,25 @@
+en:
+  projects:
+    index: 
+      title: Your projects
+      name: Name
+      position: Position
+      actions: Actions
+      new: New project
+      confirm_destroy: Are you sure you want to delete this project?
+      destroy: Delete
+    new:
+      title: New project
+      name: Name
+      position: Position
+      create: Create project
+      back: Back to projects
+      insert_at_start: Insert at start
+      insert_at_end: Insert at end
+    create:
+      success: Project was successfully created.
+      error: Project was not created.
+    destroy:
+      success: Project was successfully deleted.
+      error: Project was not deleted.
+      unauthorized: You are not authorized to delete this project.
