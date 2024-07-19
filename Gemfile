@@ -47,6 +47,7 @@ gem 'bootsnap', require: false
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'pagy', '~> 8.6', '>= 8.6.3'
 gem 'simple_form', '~> 5.3', '>= 5.3.1'
+gem 'slim-rails', '~> 3.6', '>= 3.6.3'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
