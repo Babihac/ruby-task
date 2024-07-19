@@ -1,3 +1,4 @@
+<% projects_count = Project.by_user(current_user.id).count %>
 <div class="flex justify-center items-center min-h-screen bg-gray-100">
   <div class="w-full max-w-md px-6 py-8 bg-white shadow-md overflow-hidden rounded-lg">
     <h2 class="text-2xl font-semibold text-gray-900 mb-4 text-center"> <%= t('.title') %> </h2>
@@ -11,7 +12,7 @@
       <div class="mb-6">
         <%= form.label :position, class: "block text-sm font-medium text-gray-700" %>
         <%= form.select :position, 
-          options_for_select([[t('.insert_at_start'), 1]] + [[t('.insert_at_end'), Project.count + 1]] + ((Project.count > 1) ? (2..Project.count).map { |index| [index, index] } : [])), 
+          options_for_select([[t('.insert_at_start'), 1]] + [[t('.insert_at_end'), projects_count + 1]] + ((projects_count > 1) ? (2..projects_count).map { |index| [index, index] } : [])), 
           {}, 
           { class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" } %>
       </div>

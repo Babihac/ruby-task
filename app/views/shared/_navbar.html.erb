@@ -31,8 +31,8 @@
     </div>
   <% else %>
     <ul class="menu menu-sm bg-base-100 rounded-box ml-auto">
-      <li><%= link_to 'Login', new_user_session_path %></li>
-      <li><%= link_to 'Register', new_user_registration_path %></li>
+      <li><%= link_to t('.login'), new_user_session_path %></li>
+      <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
     </ul>
   <% end %>
 

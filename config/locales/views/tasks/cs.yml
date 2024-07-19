@@ -28,11 +28,13 @@ cs:
       done: Ukončeno
       pending: Nedokončeno
       filter: Filtrovat
+      no_project: Nepřiřazen k projektu
     new:
       title: Nový úkol
       create: Vytvořit úkol
       back: Zpět na úkoly
       select_project: Vyberte projekt
+      no_project: Bez projektu
     create:
       success: Úkol byl úspěšně vytvořen.
       failure: Úkol nebyl vytvořen.
@@ -48,6 +50,7 @@ cs:
       is_done: Dokončeno
       current_attachment: Současná příloha
       download: Stáhnout
+      no_project: Bez projektu
     update:
       success: Úkol byl úspěšně uložen.
       failure: Úkol nebyl uložen.

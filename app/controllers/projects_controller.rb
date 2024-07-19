@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @projects_count = Project.by_user(current_user.id)
   end
 
   def create

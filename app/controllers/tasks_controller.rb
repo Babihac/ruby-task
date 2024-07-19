@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :load_task_detail, only: %i[edit show]
   before_action :load_task, only: %i[destroy toggle_done update]
+  before_action :load_user_resources, only: %i[new create edit update]
 
   def index
     @pagy, @tasks = pagy(Task.filter(filter_params).by_user(current_user.id), items: Pagy::DEFAULT[:max_items])
@@ -69,5 +70,10 @@ class TasksController < ApplicationController
     redirect_to tasks_path, alert: I18n.t('tasks.unauthorized') if @task.user_id != current_user.id
   rescue ActiveRecord::RecordNotFound
     redirect_to tasks_path, alert: I18n.t('tasks.not_found')
+  end
+
+  def load_user_resources
+    @tags = Tag.by_user(current_user.id)
+    @projects = Project.by_user(current_user.id)
   end
 end

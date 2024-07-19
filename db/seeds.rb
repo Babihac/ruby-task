@@ -24,24 +24,17 @@ ActiveRecord::Base.transaction do
 
   users.each do |user|
     (1..20).each do |i|
-      new_tag = user.tags.create(title: "#{Faker::Lorem.word} #{i}")
-      puts "XOXOXO: #{new_tag.errors.full_messages}" unless new_tag.valid?
+      user.tags.create!(title: "#{Faker::Hobby.activity} #{i}")
 
-      user.projects.create!(title: "#{Faker::Lorem.word} #{i}", position: i)
-    end
-  end
+      user.projects.create!(title: "#{Faker::Quote.famous_last_words} #{i}", position: i)
 
-  all_tags = Tag.all
-
-  users.each do |user|
-    20.times do
       random_project = user.projects.sample
-      random_tags = all_tags.sample(rand(1..3))
+      random_tags = user.tags.sample(rand(1..3))
 
       user.tasks.create!(
-        title: Faker::Lorem.sentence(word_count: 3),
+        title: "#{i} - #{Faker::Music::Hiphop.artist}",
         project: random_project,
-        description: Faker::Lorem.sentence(word_count: 10),
+        description: "#{Faker::GreekPhilosophers.quote} #{i}",
         tags: random_tags
       )
     end

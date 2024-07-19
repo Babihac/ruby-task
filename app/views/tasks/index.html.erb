@@ -37,7 +37,7 @@
             <tr>
               <td><%= task.id %></td>
               <td><%= highlight(task.title, params[:title]) %></td>
-              <td><%= task.project.title %></td>
+              <td><%= task.project.present? ? task.project.title : t('.no_project') %></td>
               <td><%= task.description %></td>
               <td>
                 <% task.tags.each do |tag| %>
