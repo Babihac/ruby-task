@@ -5,23 +5,27 @@ cs:
         user:
           attributes:
             first_name:
-              blank: "nesmí být prázdné"
+              blank: nesmí být prázdné
             last_name:
-              blank: "nesmí být prázdné"
+              blank: nesmí být prázdné
             email:
-              blank: "nesmí být prázdný"
-              taken: "již je obsazen"
+              blank: nesmí být prázdný
+              taken: již je obsazen
             password:
-              blank: "nesmí být prázdné"
-              too_short: "musí mít alespoň %{count} znaků"
+              blank: nesmí být prázdné
+              too_short: musí mít alespoň %{count} znaků
             password_confirmation:
-              blank: "nesmí být prázdné"
-              confirmation: "nesouhlasí s ověřením"
+              blank: nesmí být prázdné
+              confirmation: nesouhlasí s ověřením
+            current_password:
+              invalid: není správné
+              blank: nesmí být prázdné
     attributes:
       user:
-        first_name: "Jméno"
-        last_name: "Příjmení"
-        email: "Email"
-        password: "Heslo"
-        password_confirmation: "Potvrzení hesla"
-        remember_me: "Pamatovat si mě"
+        first_name: Jméno
+        last_name: Příjmení
+        email: Email
+        password: Heslo
+        password_confirmation: Potvrzení hesla
+        remember_me: Pamatovat si mě
+        current_password: Aktuální heslo

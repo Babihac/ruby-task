@@ -46,8 +46,8 @@
               </td>
               <td><%= task.status %></td>
               <td>
-                <%= link_to t('.edit'), edit_task_path(id: task.id), class: "btn btn-link btn-sm" %>
-                <%= link_to t('.detail'), task_path(id: task.id), class: "btn btn-link btn-sm" %>
+                <%= link_to t('.edit'), edit_task_path(id: task.id), class: "btn btn-link btn-sm", data: {turbo: false} %>
+                <%= link_to t('.detail'), task_path(id: task.id), class: "btn btn-link btn-sm", data: {turbo: false} %>
                 <%= link_to t('.destroy'), task_path(id: task.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.confirm_destroy') }, class: "btn btn-link btn-sm" %>
                 <%= link_to task.is_done ? t('.mark_as_pending') : t('.mark_as_done'), toggle_done_task_path(id: task.id), method: :patch, class: "btn btn-link btn-sm", data: { turbo_method: :patch } %>
               </td>

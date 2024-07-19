@@ -5,23 +5,27 @@ en:
         user:
           attributes:
             first_name:
-              blank: "can't be blank"
+              blank: can't be blank
             last_name:
-              blank: "can't be blank"
+              blank: can't be blank
             email:
-              blank: "can't be blank"
-              taken: "has already been taken"
+              blank: can't be blank
+              taken: has already been taken
             password:
-              blank: "can't be blank"
-              too_short: "is too short (minimum is %{count} characters)"
+              blank: can't be blank
+              too_short: is too short (minimum is %{count} characters)
             password_confirmation:
               blank: 
-              confirmation: "doesn't match confirmation"
+              confirmation: doesn't match confirmation
+            current_password:
+              invalid: is invalid
+              blank: can't be blank
     attributes:
       user:
-        first_name: "First name"
-        last_name: "Last name"
-        email: "Email"
-        password: "Password"
-        password_confirmation: "Password confirmation"
-        remember_me: "Remember me"
+        first_name: First name
+        last_name: Last name
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me"
+        current_password: Current password

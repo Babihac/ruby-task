@@ -13,8 +13,21 @@
         <%= f.input :is_done, as: :boolean, input_html: { class: "mt-4" }, wrapper: false, label: t('.is_done') %>
 
       <div class="overflow-scroll max-w-md mt-4 tags h-48">
-        <%= f.association :tags, as: :check_boxes, input_html: { class: "color-red-500"}, item_wrapper_class: "flex items-center space-x-2 checkbox", item_label_class: "text-sm text-gray-900 flex gap-2 mt-2" %>
+        <%= f.association :tags, as: :check_boxes, item_wrapper_class: "flex items-center space-x-2 checkbox", item_label_class: "text-sm text-gray-900 flex gap-2 mt-2" %>
       </div>
+
+      <% if f.object.attachment.attached? %>
+        <div class="mt-8 mb-4">
+          <% if f.object.attachment.content_type.starts_with?('image/') %>
+            <%= image_tag f.object.attachment, class: "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg" %>
+          <% else %>
+            <div>
+              <strong><%= t('.current_attachment') %></strong> <%= f.object.attachment.filename.to_s %>
+              <%= link_to t('.download'), rails_blob_path(f.object.attachment, disposition: "attachment"), class: "text-blue-500 hover:text-blue-700" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
         <%= f.input :attachment, as: :file, input_html: { class: "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-transparent" }, wrapper: false, label_html: { class: "block mb-2 text-sm font-medium text-gray-900 mt-4" } %>
       </div>

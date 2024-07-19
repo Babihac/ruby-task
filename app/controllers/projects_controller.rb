@@ -7,7 +7,9 @@ class ProjectsController < ApplicationController
 
   def index
     filtered_projects = Project.filter_by_title(params[:title]).by_user(current_user.id)
-    @pagy, @projects = pagy(filtered_projects, items: 8)
+    @pagy, @projects = pagy(filtered_projects, items: Pagy::DEFAULT[:max_items])
+  rescue Pagy::OverflowError
+    redirect_to projects_path
   end
 
   def new
@@ -18,7 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params.merge(user_id: current_user.id))
     render :new, status: :unprocessable_entity and return unless @project.valid?
 
-    ProjectService.shift_projects(project_params[:position])
+    ProjectService.shift_projects(project_params[:position], current_user.id)
     @project.save!
     redirect_to projects_path, status: :see_other, notice: I18n.t('projects.create.success')
   end
@@ -26,7 +28,7 @@ class ProjectsController < ApplicationController
   def destroy
     position = @project.position
     @project.destroy
-    ProjectService.unshift_projects(position)
+    ProjectService.unshift_projects(position, current_user.id)
     redirect_to projects_path, notice: I18n.t('projects.destroy.success')
   end
 

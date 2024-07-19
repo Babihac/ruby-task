@@ -7,7 +7,9 @@ class TagsController < ApplicationController
 
   def index
     filtered_tags = Tag.filter_by_title(params[:title]).by_user(current_user.id)
-    @pagy, @tags = pagy(filtered_tags, items: 8)
+    @pagy, @tags = pagy(filtered_tags, items: Pagy::DEFAULT[:max_items])
+  rescue Pagy::OverflowError
+    redirect_to tags_path
   end
 
   def new

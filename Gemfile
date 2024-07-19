@@ -58,6 +58,7 @@ group :development, :test do
   gem 'rspec', '~> 3.13'
   gem 'rspec-rails', '~> 6.1', '>= 6.1.3'
   gem 'faker', '~> 3.4', '>= 3.4.2'
+  gem 'bullet', '~> 7.2'
 end
 
 group :development do

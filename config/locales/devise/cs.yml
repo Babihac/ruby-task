@@ -2,13 +2,14 @@ cs:
   devise:
     failure:
       user:
-        not_found_in_database: "Nenalezeno uživatelské jméno nebo heslo."
-        invalid: "Nesprávné uživatelské jméno nebo heslo."
-        unauthenticated: "Musíte se přihlásit než budete pokračovat."
+        not_found_in_database: Nenalezeno uživatelské jméno nebo heslo.
+        invalid: Nesprávné uživatelské jméno nebo heslo.
+        unauthenticated: Musíte se přihlásit než budete pokračovat.
     sessions:
-      signed_in: "Přihlášení proběhlo úspěšně."
-      signed_out: "Odhlášení proběhlo úspěšně."
-      signed_up: "Vítejte! Úspěšně jste se zaregistrovali."
+      signed_in: Přihlášení proběhlo úspěšně.
+      signed_out: Odhlášení proběhlo úspěšně.
+      signed_up: Vítejte! Úspěšně jste se zaregistrovali.
     registrations:
       user:
-        signed_up: "Vítejte! Úspěšně jste se zaregistrovali."
+        signed_up: Vítejte! Úspěšně jste se zaregistrovali.
+        updated: Vaše údaje byly úspěšně aktualizovány.

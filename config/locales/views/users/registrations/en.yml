@@ -4,3 +4,8 @@ en:
       new:
         title: Sign up 
         sign_up: Sign up
+      edit:
+        title: Edit your profile
+        update: Update
+        password_info: If you don't want to change your password, leave the password and password confirmation fields blank.
+        current_password_required: To change your details, you need to enter your current password.

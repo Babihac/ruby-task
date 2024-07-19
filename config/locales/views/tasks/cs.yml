@@ -46,6 +46,8 @@ cs:
       back: Zpět na úkoly
       submit: Uložit
       is_done: Dokončeno
+      current_attachment: Současná příloha
+      download: Stáhnout
     update:
       success: Úkol byl úspěšně uložen.
       failure: Úkol nebyl uložen.

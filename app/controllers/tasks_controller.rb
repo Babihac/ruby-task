@@ -7,7 +7,9 @@ class TasksController < ApplicationController
   before_action :load_task, only: %i[destroy toggle_done update]
 
   def index
-    @pagy, @tasks = pagy(Task.filter(filter_params).by_user(current_user.id), items: 8)
+    @pagy, @tasks = pagy(Task.filter(filter_params).by_user(current_user.id), items: Pagy::DEFAULT[:max_items])
+  rescue Pagy::OverflowError
+    redirect_to tasks_path
   end
 
   def show; end
@@ -64,7 +66,7 @@ class TasksController < ApplicationController
   def load_task_detail
     @task = Task.detail(params[:id])
 
-    redirect_to tasks_path, alert: I18n.t('tasks.not_found') if @task.user_id != current_user.id
+    redirect_to tasks_path, alert: I18n.t('tasks.unauthorized') if @task.user_id != current_user.id
   rescue ActiveRecord::RecordNotFound
     redirect_to tasks_path, alert: I18n.t('tasks.not_found')
   end

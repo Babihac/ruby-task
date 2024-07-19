@@ -4,3 +4,8 @@ cs:
       new:
         title: Registrace
         sign_up: Registrovat
+      edit:
+        title: Úprava Vašeho profilu
+        update: Aktualizovat
+        password_info: Pokud nechcete změnit heslo, nevyplňujte pole heslo a potvrzení hesla.
+        current_password_required: Pro změnu údajů je nutné zadat Vaše aktuální heslo.
