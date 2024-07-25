@@ -53,7 +53,7 @@ class TasksController < ApplicationController
   end
 
   def filter_params
-    params.permit(:title, :status, :project_id).to_h.select { |_, v| v.present? }
+    params.permit(:title, :status, :project_id, tags: []).to_h.select { |_, v| v.present? }
   end
 
   def load_task

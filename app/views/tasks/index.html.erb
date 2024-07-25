@@ -4,17 +4,32 @@
     <%= link_to t('.new'), new_task_path, class: "btn btn-primary btn-sm ml-5" %>
   </div>
 
-  <%= form_tag(tasks_path, method: "get", class: "flex gap-4 items-end mt-5", data: { turbo_frame: "tasks_table" }) do %>
-    <%= text_field_tag :title, params[:title], placeholder: t('.filter_by_title'), class: "border border-gray-300 rounded-md p-2" %>
-    <div class='flex flex-col'>
-      <%= label_tag :status, t('.status') %>
-      <%= select_tag :status, options_for_select([[t('.all'), nil], [t('.done'), true], [t('.pending'), false]], selected: params[:status]), class: "border border-gray-300 rounded-md p-2" %>
+  <%= form_tag(tasks_path, method: "get", class: "mt-5", data: { turbo_frame: "tasks_table" }) do %>
+    <div class= "flex gap-4 items-end">
+      <%= text_field_tag :title, params[:title], placeholder: t('.filter_by_title'), class: "border border-gray-300 rounded-md p-2" %>
+      <div class='flex flex-col'>
+        <%= label_tag :status, t('.status') %>
+        <%= select_tag :status, options_for_select([[t('.all'), nil], [t('.done'), true], [t('.pending'), false]], selected: params[:status]), class: "border border-gray-300 rounded-md p-2" %>
+      </div>
+      <div class='flex flex-col'>
+        <%= label_tag :project_id, t('.project') %>
+        <%= select_tag :project_id, options_for_select([[t('.all'), nil]] + Project.by_user(current_user.id).map { |p| [p.title, p.id] }, selected: params[:project_id]), class: "border border-gray-300 rounded-md p-2" %>
+      </div>
+      <%= submit_tag t('.filter'), class: "btn btn-primary" %>
     </div>
-   <div class='flex flex-col'>
-      <%= label_tag :project_id, t('.project') %>
-      <%= select_tag :project_id, options_for_select([[t('.all'), nil]] + Project.by_user(current_user.id).map { |p| [p.title, p.id] }, selected: params[:project_id]), class: "border border-gray-300 rounded-md p-2" %>
+
+    <div class='flex flex-wrap max-w-[70%] mt-4 gap-1'>
+      <div class='basis-full'> <%= t('.tags') %> </div>    
+      <% Tag.by_user(current_user.id).each do |tag| %>
+        <div class='flex items-center gap-2'>
+          <%= label_tag "tags_#{tag.id}" do %>
+            <%= tag.title %>
+            <%= check_box_tag "tags[]", tag.id, params[:tags].present? && params[:tags].include?(tag.id.to_s), id: "tags_#{tag.id}" %>
+
+          <% end %>
+        </div>
+      <% end %>
     </div>
-    <%= submit_tag t('.filter'), class: "btn btn-primary" %>
   <% end %>
   <%= turbo_frame_tag "tasks_table" do %>
     <div class="overflow-x-auto mt-5">

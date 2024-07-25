@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
-  FILTERABLE_PARAMS = %i[title status project_id].freeze
+  FILTERABLE_PARAMS = %i[title status project_id tags].freeze
 
   has_one_attached :attachment
 
@@ -15,8 +15,9 @@ class Task < ApplicationRecord
   # I also tried to load project and attachment with with_attached_attachment, but according to bullet it is not optimal
   scope :detail, ->(id) { includes(%i[tags]).find(id) }
   scope :filter_by_project_id, ->(project_id) { where(project_id:).order(created_at: :desc) }
-  scope :filter_by_title, ->(title) { where('title ILIKE ?', "%#{title}%") }
+  scope :filter_by_title, ->(title) { where('tasks.title ILIKE ?', "%#{title}%") }
   scope :filter_by_status, ->(status) { where(is_done: status) }
+  scope :filter_by_tags, ->(tag_ids) { joins(:tags).where(tags: { id: tag_ids }) }
 
   def status
     is_done ? I18n.t('tasks.status.done') : I18n.t('tasks.status.pending')
