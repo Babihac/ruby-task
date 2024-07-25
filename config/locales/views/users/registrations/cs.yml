@@ -1,5 +1,6 @@
 cs:
   users:
+    account_destroyed: Váš účet byl úspěšně smazán.
     registrations:
       new:
         title: Registrace
@@ -9,3 +10,6 @@ cs:
         update: Aktualizovat
         password_info: Pokud nechcete změnit heslo, nevyplňujte pole heslo a potvrzení hesla.
         current_password_required: Pro změnu údajů je nutné zadat Vaše aktuální heslo.
+        submit: Uložit změny
+        delete: Smazat účet
+        confirm_destroy: Opravdu chcete smazat svůj účet? Tuto akci nelze vrátit zpět.

@@ -1,5 +1,6 @@
 en:
   users:
+    account_destroyed: Your account has been successfully deleted.
     registrations:
       new:
         title: Sign up 
@@ -9,3 +10,6 @@ en:
         update: Update
         password_info: If you don't want to change your password, leave the password and password confirmation fields blank.
         current_password_required: To change your details, you need to enter your current password.
+        submit: Save changes
+        delete: Delete account
+        confirm_destroy: Are you sure you want to delete your account? This action cannot be undone.
