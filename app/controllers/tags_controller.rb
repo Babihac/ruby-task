@@ -16,6 +16,10 @@ class TagsController < ApplicationController
     @tag = Tag.new
   end
 
+  def test
+    1 + 1
+  end
+
   def create
     @tag = Tag.new(tag_params.merge(user_id: current_user.id))
     render :new, status: :unprocessable_entity and return unless @tag.valid?

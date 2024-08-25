@@ -9,7 +9,7 @@ class ProjectService
       Project.transaction do
         projects_to_shift = user_projects.where(position: position..).order(position: :asc)
         projects_to_shift.reverse_each do |project|
-          project.update(position: project.position + 1)
+          project.update!(position: project.position + 1)
         end
       end
     rescue ActiveRecord::RecordInvalid
@@ -23,7 +23,7 @@ class ProjectService
       Project.transaction do
         projects_to_unshift = user_projects.where(position: deleted_position..).order(position: :asc)
         projects_to_unshift.each do |project|
-          project.update(position: project.position - 1)
+          project.update!(position: project.position - 1)
         end
       end
     rescue ActiveRecord::RecordInvalid
