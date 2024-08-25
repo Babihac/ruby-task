@@ -1,6 +1,7 @@
 {
   "name": "app",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
@@ -14,6 +15,9 @@
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
-    "daisyui": "^4.12.10"
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.9.0",
+    "daisyui": "^4.12.10",
+    "eslint-plugin-react": "^7.35.0"
   }
 }
